@@ -307,8 +307,7 @@ body {
   background: var(--item-bg);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 16px;
+  justify-content: center;
   position: relative;
   order: -1;
 }
@@ -320,6 +319,8 @@ body {
 }
 
 .stack-item .idx {
+  position: absolute;
+  right: 16px;
   font-size: 10px;
   color: var(--muted);
   letter-spacing: 1px;
