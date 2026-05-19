@@ -50,7 +50,7 @@ function updatePanel() {
   infoTop.textContent    = size > 0 ? stack[size - 1] : '—';
   infoStatus.textContent = size === 0 ? 'empty' : 'not empty';
 
-  emptyMsg.style.display = size === 0 ? '' : 'none';
+  emptyMsg.style.display = size === 0 ? 'flex' : 'none';
 
   const oldMarker = stackContainer.querySelector('.top-marker');
   if (oldMarker) oldMarker.remove();
