@@ -57,7 +57,7 @@ function updatePanel() {
 
   const items = stackContainer.querySelectorAll('.stack-item');
   if (items.length > 0) {
-    const topEl = stackContainer.querySelector('.stack-item');
+    const topEl = stackContainer.lastElementChild;
     const marker = document.createElement('span');
     marker.className   = 'top-marker';
     marker.textContent = 'TOP';
@@ -65,8 +65,7 @@ function updatePanel() {
   }
 
   items.forEach((el, di) => {
-    const si = stack.length - 1 - di;
-    el.querySelector('.idx').textContent = `[${si}]`;
+    el.querySelector('.idx').textContent = `[${di}]`;
   });
 }
 
@@ -101,7 +100,7 @@ async function pushOp(value, silent = false) {
   const el = makeEl(value);
   setDur(el);
   el.classList.add('anim-in');
-  stackContainer.prepend(el);
+  stackContainer.appendChild(el);
 
   await wait(animDuration + 40);
   el.classList.remove('anim-in');
@@ -121,7 +120,7 @@ async function popOp(silent = false) {
   lockButtons(true);
 
   const value  = stack.pop();
-  const topEl  = stackContainer.querySelector('.stack-item');
+  const topEl  = stackContainer.lastElementChild;
 
   if (topEl) {
     setDur(topEl);
@@ -145,7 +144,7 @@ async function peekOp() {
   animating = true;
   lockButtons(true);
 
-  const topEl = stackContainer.querySelector('.stack-item');
+  const topEl = stackContainer.lastElementChild;
   if (topEl) {
     setDur(topEl);
     topEl.classList.add('anim-peek');

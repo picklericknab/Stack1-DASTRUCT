@@ -268,10 +268,10 @@ body {
   border: 2px solid var(--border);
   border-bottom: none;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
   position: relative;
-  padding: 10px 0 0;
+  padding: 0 0 10px;
 }
 
 .stack-empty {
@@ -307,9 +307,9 @@ body {
   background: var(--item-bg);
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0 16px;
   position: relative;
-  order: -1;
 }
 
 .stack-item .val {
@@ -319,8 +319,6 @@ body {
 }
 
 .stack-item .idx {
-  position: absolute;
-  right: 16px;
   font-size: 10px;
   color: var(--muted);
   letter-spacing: 1px;
