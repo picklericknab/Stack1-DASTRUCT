@@ -101,7 +101,7 @@ async function pushOp(value, silent = false) {
   const el = makeEl(value);
   setDur(el);
   el.classList.add('anim-in');
-  stackContainer.appendChild(el);
+  stackContainer.prepend(el);
 
   await wait(animDuration + 40);
   el.classList.remove('anim-in');
